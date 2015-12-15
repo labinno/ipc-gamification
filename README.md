@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Habitica [![Build Status](https://travis-ci.org/HabitRPG/habitrpg.svg?branch=develop)](https://travis-ci.org/HabitRPG/habitrpg) [![Code Climate](https://codeclimate.com/github/HabitRPG/habitrpg.svg)](https://codeclimate.com/github/HabitRPG/habitrpg) [![Coverage Status](https://coveralls.io/repos/HabitRPG/habitrpg/badge.svg?branch=develop)](https://coveralls.io/r/HabitRPG/habitrpg?branch=develop) [![Bountysource](https://api.bountysource.com/badge/tracker?tracker_id=68393)](https://www.bountysource.com/trackers/68393-habitrpg?utm_source=68393&utm_medium=shield&utm_campaign=TRACKER_BADGE)
 ===============
 
@@ -10,3 +11,7 @@ For an introduction to the technologies used and how the software is organized, 
 To set up a local install of Habitica for development and testing, see [Setting up Habitica Locally](http://habitica.wikia.com/wiki/Setting_up_Habitica_Locally), which contains instructions for Windows, *nix / Mac OS, and Vagrant.
 
 Then read [Guidance for Blacksmiths](http://habitica.wikia.com/wiki/Guidance_for_Blacksmiths) for additional instructions and useful tips.
+=======
+# ipc-gamification
+Innovative Project Challenge : Gamification
+>>>>>>> ca130b3774316961d522fd8dc7aa2def0a9a0e06
