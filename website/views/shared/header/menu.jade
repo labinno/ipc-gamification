@@ -166,9 +166,6 @@ nav.toolbar(ng-controller='MenuCtrl')
               a(target='_blank' href='https://trello.com/c/odmhIqyW/440-read-first-table-of-contents')=env.t('requestAF')
             li
               a(target='_blank' href='http://habitica.wikia.com/wiki/Contributing_to_Habitica')=env.t('contributeToHRPG')
-    ul.toolbar-subscribe(ng-if='!user.purchased.plan.customerId')
-      li.toolbar-subscribe-button
-        button.highlight(ui-sref='options.settings.subscription',popover-trigger='mouseenter',popover-placement='bottom',popover-title=env.t('subscriptions'),popover=env.t('subDescription'),popover-append-to-body='true')=env.t('subscribe')
     ul.toolbar-options
       li.toolbar-notifs
         a(data-expand-menu, menu='notifs')
@@ -245,10 +242,6 @@ nav.toolbar(ng-controller='MenuCtrl')
               li
                 a(ui-sref='options.settings.export')=env.t('export')
               li
-                a(ui-sref='options.settings.promo')=env.t('promoCode')
-              li
-                a(ui-sref='options.settings.subscription')=env.t('subscription')
-              li
                 a(ui-sref='options.settings.notifications')=env.t('notifications')
             ul.toolbar-submenu
               li
@@ -260,7 +253,7 @@ nav.toolbar(ng-controller='MenuCtrl')
               a(data-close-menu)=env.t('close')
     ul.toolbar-wallet
       li.toolbar-gems(popover-trigger='mouseenter', popover-title=env.t('gemsPopoverTitle'), popover=env.t('gemsWhatFor'), popover-placement='bottom',popover-append-to-body='true')
-        a.gem-wallet(ng-click='openModal("buyGems",{track:"Gems > Toolbar"})')
+        a.gem-wallet()
           span.Pet_Currency_Gem2x.Gems
           span.gem-text {{user.balance * 4 | number:0}}
       li.toolbar-currency.gold(popover=env.t('gold') + ' ({{Shared.gold(user.stats.gp)}})', popover-placement='bottom',popover-trigger='mouseenter')

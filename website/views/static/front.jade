@@ -64,16 +64,6 @@ html(ng-app='habitrpg', ng-controller='RootCtrl')
             #bs-example-navbar-collapse-1.collapse.navbar-collapse
               ul.nav.navbar-nav.navbar-right
                 li
-                  a(href='/static/features')=env.t('companyAbout')
-                li
-                  a(href='/static/plans')=env.t('groupPlans')
-                li
-                  a(href='http://blog.habitrpg.com/')=env.t('companyBlog')
-                li
-                  a(href='/static/press-kit')=env.t('presskit')
-                li
-                  a(href='/static/contact')=env.t('contactUs')
-                li
                   button#header-play-button.btn.btn-primary.navbar-btn.navbar-right(ng-click='playButtonClick()')= env.t('playButtonFull')
       #intro
         h1=env.t('motivate1')
