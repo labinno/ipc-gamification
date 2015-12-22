@@ -51,7 +51,12 @@ module.exports = function(grunt) {
         }
       }
     },
-
+    watch: {
+        files: [
+            'website/public/css/*.styl'
+        ],
+        tasks: ['stylus:build'],
+    },
     copy: {
       build: {
         files: [

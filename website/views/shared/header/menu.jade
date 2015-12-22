@@ -27,9 +27,7 @@ nav.toolbar(ng-controller='MenuCtrl')
               li
                 a(ui-sref='options.social.tavern')=env.t('tavern')
               li
-                a(ui-sref='options.social.party')=env.t('party')
-              li
-                a(ui-sref='options.social.guilds.public')=env.t('guilds')
+                a(ui-sref='options.social.guilds.public')=env.t('party')
               li
                 a(ui-sref='options.social.challenges')=env.t('challenges')
               li
@@ -45,8 +43,9 @@ nav.toolbar(ng-controller='MenuCtrl')
                 a(ui-sref='options.inventory.mounts')=env.t('mounts')
               li
                 a(ui-sref='options.inventory.equipment')=env.t('equipment')
-              li
-                a(ui-sref='options.inventory.timetravelers')=env.t('timeTravelers')
+              //
+                li
+                  a(ui-sref='options.inventory.timetravelers')=env.t('timeTravelers')
               li
                 a(ui-sref='options.inventory.seasonalshop')=env.t('seasonalShop')
             ul.toolbar-submenu
@@ -245,7 +244,7 @@ nav.toolbar(ng-controller='MenuCtrl')
                 a(ui-sref='options.settings.notifications')=env.t('notifications')
             ul.toolbar-submenu
               li
-                a(href='https://habitica.com/static/faq', target='_blank')=env.t('FAQ')
+                a(href='/static/faq', target='_blank')=env.t('FAQ')
               li
                 a(href='https://vimeo.com/57654086', target='_blank')=env.t('tutorials')
           ul.toolbar-controls

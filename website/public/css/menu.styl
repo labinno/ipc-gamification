@@ -85,7 +85,13 @@
     @extend $hrpg-button-toggle
     @extend $hrpg-modal-dropdown-right
     hrpg-button-color-mixin($color-toolbar)
+    color: #FFFFFF
+    > a
+       color: #FFFFFF!important
     &.highlight
+      color: #FFFFFF!important
+      border: none;
+      background-color: transparent !important;
       > a span.glyphicon
         margin-right: 0.382em !important
   .toolbar-button
@@ -94,6 +100,7 @@
     > a
       display:inline-block
       height:100%
+      color: #FFFFFF!important
 // Information bar: Bailey – notifs – currency – subscribe button
 .toolbar-bailey, .toolbar-wallet, .toolbar-options, .toolbar-subscribe
   float:right
@@ -128,18 +135,29 @@
       margin-left:0em
       margin-right: 0.618em
 .toolbar-sync, .toolbar-settings, .toolbar-audio
-  @extend $hrpg-button
-  hrpg-button-color-mixin($color-toolbar)
+  //@extend $hrpg-button
+  //hrpg-button-color-mixin($color-toolbar)
+    padding: 0px 6px
+    display: inline-block
+    color: #FFFFFF!important
+    background-color: transparent
+    font-size: 19px
 // Notifications icon and dropdown
 .toolbar-notifs
   @extend $hrpg-button
   @extend $hrpg-modal-dropdown-left
   hrpg-button-color-mixin($color-toolbar)
+  color: white!important
   > a span.inactive
     opacity: 0.236 !important
   div
     padding-bottom: 1em
     width: 300px
+    h4
+      background: #00C2D5 !important;
+      color: rgba(255, 255, 255, 0.8) !important;
+    h4:before
+      background: #00C2D5 !important;
     @media screen and (max-width:768px)
       width: 96%
     .toolbar-notifs-notifs

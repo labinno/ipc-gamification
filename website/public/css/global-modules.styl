@@ -91,40 +91,40 @@ hrpg-anchor-button-color-mixin($hrpg-button-color)
 $hrpg-button-master
   list-style: none
   > a, > button, > input, label::after
+    //new
+    border: none;
+    background: #00a1d5;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    padding: 6px 15px !important;
+    border-radius: 0;
+    //old
     display: inline-block !important
-    padding: 0.25em 0.5em !important
+    //padding: 0.25em 0.5em !important
     text-decoration:none
     font-size: 1em
-    color:#222
-    background-color: transparent
+    //background-color: transparent
     .glyphicon
       position: relative
       top: 0.132em
- > a, > button
+  > a, > button
     &:active
       background-color: #aaa !important
 $hrpg-button
   @extend $hrpg-button-master
   > a, > button, > input, label::after
-    border: 1px solid #ccc !important
-    border-radius: 0.382em !important
-  .highlight
-    hrpg-button-color-mixin($color-toolbar, true)
+    border: none !important
+    color: #FFF
 $hrpg-button-toggle
   @extend $hrpg-button-master
-  border: 1px solid #ccc !important
-  border-radius: 0.382em !important
-  > a:first-of-type
-    border-radius: 0.382em 0em 0em 0.382em !important
-  > a:last-of-type
-    border-radius: 0em 0.382em 0.382em 0em !important
+  border: none !important
+  color: #FFF
   &.highlight
     hrpg-button-color-mixin($color-toolbar, true)
 // Input + Button
 $hrpg-button-with-input
   @extend $hrpg-button-master
   border: none
-  border-radius: 0.382em
   input, a, button, textarea
     display: block
     float: left
@@ -133,7 +133,6 @@ $hrpg-button-with-input
     height: auto
   input, textarea
     border: 1px solid #ccc
-    border-radius: 0.382em 0em 0em 0.382em !important
     padding-left: 0.618em
     background-color: #fff !important
     -webkit-appearance: none
@@ -147,7 +146,6 @@ $hrpg-button-with-input
     border-right-style: solid
     border-bottom-style: solid
     border-left: none
-    border-radius: 0em 0.382em 0.382em 0em
     outline: none
 //Button bar
 hrpg-button-bar-mixin($hrpg-button-bar-color)
