@@ -20,7 +20,7 @@ mixin taskColumnTabs(position)
         a(ng-click='list.view = "complete"')=env.t('grey')
   // Todo Tabs
   div(ng-if='::main && list.type=="todo"', ng-class='::{"tabbable tabs-below": list.type=="todo"}')
-    if position=="bottom"
+    //if position=="bottom"
       div(ng-show='list.view == "complete"')
         .alert
           =env.t('lotOfToDos')

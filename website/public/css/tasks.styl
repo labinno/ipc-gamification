@@ -120,7 +120,7 @@ for $stage in $stages
     margin-left: -5px
     margin-right: -5px
 
-    .col-md-3
+    .col-md-6
       padding-left: 10px // Override Bootstrap 15px padding
       padding-right: 10px // Override Bootstrap 15px padding
       margin-bottom: 15px
@@ -129,9 +129,15 @@ for $stage in $stages
 // ------------
 .task-column
   padding: 1.5em
-  background: $color-tasks
-  border: 1px solid darken($color-tasks,16.18%)
   font-family: 'Lato', sans-serif
+  bottom: 0;
+  left: 0;
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  border: 0;
+  background-color: white
 
   &:after
     clear: both;

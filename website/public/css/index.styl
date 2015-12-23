@@ -36,6 +36,7 @@ html,body,p,h1,ul,li,table,tr,th,td
   margin: 0
   padding: 0
 
+
 *
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
@@ -51,12 +52,17 @@ hr
 
 html, body 
   height: 100%
+  background-color: #f0f0f0;
 
 #wrap
   z-index:-1
-  padding: 0 15px // Required by Bootstrap 3 when using .container-fluid
+  padding: 20px 10px // Required by Bootstrap 3 when using .container-fluid
   min-height: 100%
   height: auto !important
+  background-color : #F0F0F0
+  width: 1008px;
+  margin-left: auto;
+  margin-right: auto;
 
 @media (max-width: 600px)
   #wrap 
@@ -138,7 +144,7 @@ a
   cursor: pointer
 
 a span.glyphicon
-  color: #333 // Takes base color from bootstrap
+  color: #fff // Takes base color from bootstrap
 
   &.text-danger
     color: #a94442 // Allows glyphicon to use text-danger class

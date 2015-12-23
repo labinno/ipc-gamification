@@ -4,8 +4,10 @@
   right:0
   width: 100%
   z-index:998
+  height: 37px
   background-color: $color-toolbar
   border-bottom: 1px solid darken($color-herobox, 12%)
+  padding: 0 13%
 .toolbar.active
   width: auto
 @media screen and (min-width:768px)
@@ -59,6 +61,9 @@
     border-left: 1px solid darken($color-toolbar, 38.2%)
     border-bottom: 1px solid darken($color-toolbar, 38.2%)
 .toolbar-container
+  width: 1008px;
+  margin-left: auto;
+  margin-right: auto;
   > ul > li
     display: inline-block
 // Mobile menu button
@@ -76,7 +81,8 @@
 .toolbar-nav
   white-space: nowrap
   float:left;
-  padding: 0.618em
+  padding: 0
+  height: 37px
   @media screen and (max-width:768px)
     display: none
   > li
@@ -84,6 +90,7 @@
   .toolbar-button-dropdown
     @extend $hrpg-button-toggle
     @extend $hrpg-modal-dropdown-right
+    height: 36px
     hrpg-button-color-mixin($color-toolbar)
     color: #FFFFFF
     > a
@@ -96,12 +103,15 @@
         margin-right: 0.382em !important
   .toolbar-button
     @extend $hrpg-button
+    height: 36px
     hrpg-button-color-mixin($color-toolbar)
     > a
       display:inline-block
       height:100%
       color: #FFFFFF!important
 // Information bar: Bailey – notifs – currency – subscribe button
+.toolbar-options
+  padding-top: 0.250em !important;
 .toolbar-bailey, .toolbar-wallet, .toolbar-options, .toolbar-subscribe
   float:right
   padding: 0.618em 0.618em 0.618em 0
@@ -110,6 +120,12 @@
     display: inline-block
     padding: 0.618em 0.382em 0.618em 0
 .toolbar-wallet
+  position: fixed;
+  bottom: 100px;
+  left: 160px;
+  li
+    display: block !important
+    margin: 15px 0
   .gem-wallet
     .Gems
       margin-top: 0em
@@ -176,6 +192,13 @@
 .toolbar-notifs-no-messages
   padding: 0.382em 1em
 // Settings dropdown
+.toolbar-settings > div
+  top: 1.9em;
+  background-color: #314048
+  ul a
+    color: white
+    text-decoration: none
+    font-size: 15px
 .toolbar-settings, .toolbar-audio
   @extend $hrpg-modal-dropdown-left
 .toolbar-controls
@@ -209,3 +232,16 @@
     transform: rotate(45deg)
   100%
     transform: rotate(0deg)
+
+#zone-header-second
+  margin-top: 37px;
+  height: 92px;
+  border-bottom: 1px solid #ddd;
+  background-color: white
+  img
+    vertical-align: bottom;
+    margin-top: 20px;
+  #zone-header-second-inner
+    width: 1008px
+    margin-right: auto
+    margin-left: auto
