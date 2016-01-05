@@ -3,8 +3,8 @@
 /* Make user and settings available for everyone through root scope.
  */
 
-habitrpg.controller("RootCtrl", ['$scope', '$rootScope', '$location', 'User', '$http', '$state', '$stateParams', 'Notification', 'Groups', 'Shared', 'Content', '$modal', '$timeout', 'ApiUrl', 'Payments','$sce','$window','Analytics',
-  function($scope, $rootScope, $location, User, $http, $state, $stateParams, Notification, Groups, Shared, Content, $modal, $timeout, ApiUrl, Payments, $sce, $window, Analytics) {
+habitrpg.controller("RootCtrl", ['$scope', '$rootScope', '$location', 'User', '$http', '$state', '$stateParams', 'Notification', 'Groups', 'Shared', 'Content', '$modal', '$timeout', 'ApiUrl', '$sce','$window','Analytics',
+  function($scope, $rootScope, $location, User, $http, $state, $stateParams, Notification, Groups, Shared, Content, $modal, $timeout, ApiUrl, $sce, $window, Analytics) {
     var user = User.user;
 
     var initSticky = _.once(function(){
@@ -34,7 +34,6 @@ habitrpg.controller("RootCtrl", ['$scope', '$rootScope', '$location', 'User', '$
     $rootScope.Math = Math;
     $rootScope.Groups = Groups;
     $rootScope.toJson = angular.toJson;
-    $rootScope.Payments = Payments;
 
     // Angular UI Router
     $rootScope.$state = $state;

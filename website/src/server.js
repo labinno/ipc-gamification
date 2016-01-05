@@ -142,10 +142,10 @@ if (cores!==0 && cluster.isMaster && (isDev || isProd)) {
 
   // Custom Directives
   oldApp.use(require('./routes/pages').middleware);
-  oldApp.use(require('./routes/payments').middleware);
+  //oldApp.use(require('./routes/payments').middleware);
   oldApp.use(require('./routes/api-v2/auth').middleware);
   oldApp.use(require('./routes/api-v2/coupon').middleware);
-  oldApp.use(require('./routes/api-v2/unsubscription').middleware);
+  //oldApp.use(require('./routes/api-v2/unsubscription').middleware);
   var v2 = express();
   oldApp.use('/api/v2', v2);
   oldApp.use('/api/v1', require('./routes/api-v1').middleware);

@@ -18,56 +18,6 @@ function($scope, $rootScope, User, $http, Notification, ApiUrl, Social) {
   }
 
   /**
-   External Scripts
-   JS files not needed right away (google charts) or entirely optional (analytics)
-   Each file gets loaded async via $.getScript, so it doesn't bog page-load
-  */
-
-  $scope.deferredScripts = function(){
-
-    // Amazon Payments
-    var amazonPaymentsUrl = 'https://static-na.payments-amazon.com/OffAmazonPayments/us/' +
-                        (window.env.NODE_ENV === 'production' ? '' : 'sandbox/') + 'js/Widgets.js';
-    $.getScript(amazonPaymentsUrl);
-
-    // Stripe
-    $.getScript('//checkout.stripe.com/v2/checkout.js');
-
-    /* Google Content Experiments
-    if (window.env.NODE_ENV === 'production') {
-      $.getScript('//www.google-analytics.com/cx/api.js?experiment=boVO4eEyRfysNE5D53nCMQ', function(){
-        $rootScope.variant = cxApi.chooseVariation();
-        $rootScope.$apply();
-      })
-    } */
-
-    // Scripts only for desktop
-    if (!window.env.IS_MOBILE) {
-      // Add This
-      //$.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5016f6cc44ad68a4"); //FIXME why isn't this working when here? instead it's now in <head>
-      var addthisServices = 'facebook,twitter,googleplus,tumblr,'+window.env.BASE_URL.replace('https://','').replace('http://','');
-      window.addthis_config = {
-        ui_click: true,
-        services_custom:{
-          name: "Download",
-          url: window.env.BASE_URL+"/export/avatar-"+User.user._id+".png",
-          icon: window.env.BASE_URL+"/favicon.ico"
-        },
-        services_expanded:addthisServices,
-        services_compact:addthisServices
-      };
-
-      // Google Charts
-      $.getScript("//www.google.com/jsapi", function() {
-        google.load("visualization", "1", {
-          packages: ["corechart"],
-          callback: function() {}
-        });
-      });
-    }
-  }
-
-  /**
    * Debug functions. Note that the server route for gems is only available if process.env.DEBUG=true
    */
   if (_.contains(['development','test'],window.env.NODE_ENV)) {

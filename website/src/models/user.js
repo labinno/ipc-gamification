@@ -102,24 +102,6 @@ var UserSchema = new Schema({
     background: {type: Schema.Types.Mixed, 'default': {}},
     txnCount: {type: Number, 'default':0},
     mobileChat: Boolean,
-    plan: {
-      planId: String,
-      paymentMethod: String, //enum: ['Paypal','Stripe', 'Gift', 'Amazon Payments', '']}
-      customerId: String, // Billing Agreement Id in case of Amazon Payments
-      dateCreated: Date,
-      dateTerminated: Date,
-      dateUpdated: Date,
-      extraMonths: {type:Number, 'default':0},
-      gemsBought: {type: Number, 'default': 0},
-      mysteryItems: {type: Array, 'default': []},
-      lastBillingDate: Date, // Used only for Amazon Payments to keep track of billing date
-      consecutive: {
-        count: {type:Number, 'default':0},
-        offset: {type:Number, 'default':0}, // when gifted subs, offset++ for each month. offset-- each new-month (cron). count doesn't ++ until offset==0
-        gemCapExtra: {type:Number, 'default':0},
-        trinkets: {type:Number, 'default':0}
-      }
-    }
   },
 
   flags: {
