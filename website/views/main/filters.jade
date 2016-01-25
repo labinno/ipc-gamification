@@ -34,7 +34,7 @@
               button(type='button', ng-click='user.ops.deleteTag({params:{id:tag.id}})')
                 span.glyphicon.glyphicon-trash
         ul(ng-if='!_editing', hrpg-sort-tags)
-          li.filters-tags(ng-class='{active: user.filters[tag.id], challenge: tag.challenge}', ng-repeat='tag in user.tags', bindonce='user.tags')
+          li.filters-tags(ng-if='(tag.id != "5e34d372-0337-430a-b8f6-48493ca220d8" && tag.id != "74e1afe2-e5c5-42b7-a188-dc7a96079d4e" && tag.id != "60a1aa24-f3e3-4386-a7a1-30434ff8fee8")', ng-class='{active: user.filters[tag.id], challenge: tag.challenge}', ng-repeat='tag in user.tags', bindonce='user.tags')
             a(ng-click='toggleFilter(tag)')
               span.glyphicon.glyphicon-bullhorn(ng-if="::tag.challenge")
               markdown(text='tag.name')
