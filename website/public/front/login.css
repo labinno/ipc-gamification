@@ -1,0 +1,31 @@
+.login-page {
+    padding: 0;
+}
+
+.login-page img {
+    image-rendering: auto;
+}
+
+.login-image {
+    height:100vh;
+    background: url('img/gamification3.jpg') #12457C no-repeat center;
+    background-size: contain;
+    image-rendering: auto!important;
+}
+
+.login-main {
+    background-color: white;
+    min-height: 100vh;
+    vertical-align: middle;
+    padding: 50px;
+    padding-top: calc(40vh - 190px);
+}
+
+.login-logo-cap {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+}
+.login-logo-cap  img{
+    width: 50%;
+}
