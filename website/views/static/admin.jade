@@ -1,0 +1,41 @@
+doctype html
+html(ng-app='habitrpg', ng-controller='RootCtrl')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, maximum-scale=1')
+    title=env.t('titleIndex')
+    link(rel='shortcut icon', sizes="32x32", href='/favicon.ico')
+    link(rel='shortcut icon', sizes="192x192", href='/favicon_192x192.png')
+
+    script(type='text/javascript').
+      window.env = !{JSON.stringify(env._.pick(env, env.clientVars))};
+    != env.getManifestFiles("static")
+    
+    link(href='//fonts.googleapis.com/css?family=Lato:400,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css')
+
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap.min.js')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js')
+
+    link(rel='stylesheet', type='text/css', href='/admin/admin.css')
+  body(ng-controller='AuthCtrl')
+    .container-fluid
+        .row.bg-primary.text-center
+            h1 Administration
+        .row
+            .col-md-4.col-md-offset-4
+                h3=env.t('register')
+                form#registrationForm(ng-submit='register()', name='registrationForm')
+                    .form-group
+                      input.form-control(type='text', ng-model='registerVals.username', placeholder=env.t('username'), spellcheck='false', required)
+                    .form-group
+                      input.form-control(type='email', ng-model='registerVals.email', placeholder=env.t('email'), required)
+                    .form-group
+                      input.form-control(type='password', ng-model='registerVals.password', placeholder=env.t('password'), required)
+                    .form-group
+                      input.form-control(type='password', ng-model='registerVals.confirmPassword', placeholder=env.t('passConfirm'), required)
+                    .form-group
+                      input.btn.btn-block.btn-lg.btn-primary(type='submit', ng-disabled='registrationForm.$invalid || registrationInProgress', value=env.t('register'))
+        .row
+        
