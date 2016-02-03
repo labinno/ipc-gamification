@@ -19,12 +19,14 @@ html(ng-app='habitrpg', ng-controller='RootCtrl')
     script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js')
 
     link(rel='stylesheet', type='text/css', href='/admin/admin.css')
-  body(ng-controller='AuthCtrl')
+  body
     .container-fluid
+    
         .row.bg-primary.text-center
             h1 Administration
+            
         .row
-            .col-md-4.col-md-offset-4
+            .col-md-3(ng-controller='AuthCtrl')
                 h3=env.t('register')
                 form#registrationForm(ng-submit='register()', name='registrationForm')
                     .form-group
@@ -37,5 +39,17 @@ html(ng-app='habitrpg', ng-controller='RootCtrl')
                       input.form-control(type='password', ng-model='registerVals.confirmPassword', placeholder=env.t('passConfirm'), required)
                     .form-group
                       input.btn.btn-block.btn-lg.btn-primary(type='submit', ng-disabled='registrationForm.$invalid || registrationInProgress', value=env.t('register'))
-        .row
-        
+                              
+            .col-md-3(ng-controller='FooterCtrl')
+                h3 Debug
+                .btn-group-vertical
+                    a.btn.btn-default(ng-click='setHealthLow()') Health = 1
+                    a.btn.btn-default(ng-click='addMissedDay(1)') +1 Missed Day
+                    a.btn.btn-default(ng-click='addMissedDay(2)') +2 Missed Days
+                    a.btn.btn-default(ng-click='addTenGems()') +10 Gems
+                    a.btn.btn-default(ng-click='addHourglass()') +1 Mystic Hourglass
+                    a.btn.btn-default(ng-click='addGold()') +500 Gold
+                    a.btn.btn-default(ng-click='addMana()') +500 Mana
+                    a.btn.btn-default(ng-click='addLevelsAndGold()') +10000 Exp +10000 Gold +10000 Mana
+                    a.btn.btn-default(ng-click='addOneLevel()') +1 Level
+                    a.btn.btn-default(ng-click='addBossQuestProgressUp()') +1000 Boss Quest Progress Up
