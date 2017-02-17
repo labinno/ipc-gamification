@@ -8,8 +8,10 @@ before_install:
   - "echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list"
   - "sudo apt-get update"
   - "sudo apt-get install mongodb-org-server"
+install:
+  - npm install
+  - npm install -g grunt-cli mocha
 before_script:
-  - 'npm install -g grunt-cli mocha'
   - cp config.json.example config.json
   - "until nc -z localhost 27017; do echo Waiting for MongoDB; sleep 1; done"
   - "export DISPLAY=:99"
